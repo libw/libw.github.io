@@ -1,0 +1,25 @@
+<div class="r-title">
+    <div class="aitem-title">
+        内容
+        <span>
+            最新内容
+        </span>
+    </div>
+</div>
+<div class="r-content" >
+    <div class="bimg" style="background: url('{{mdata.background}}') no-repeat center/cover;padding: 20px">
+        <p style="color: #fff;font-size: 24px;position: relative;">{{mdata.description}}</p>
+    </div>
+    <div class="perple" style="width: 100%;height: 100px;display: flex;font-size: 20px;line-height: 100px;padding-left: 20px">
+        推荐人：<div ng-repeat="p in per" style="background: url('{{p.avatar}}') center/contain;width: 60px;height: 60px;border-radius: 50%;margin-right:20px;margin-top: 20px "></div>
+    </div>
+
+    <a href="#!/show/{{v.id}}" class="item" ng-repeat="v in ddata">
+        <div class="img" style="background: url('{{v.images[0]||imageurl}}') no-repeat center/cover">
+        </div>
+        <p>{{v.title}}</p>
+    </a>
+</div>
+<div class="more">
+    <a href="">更多精彩可在知乎日报app查询</a>
+</div>

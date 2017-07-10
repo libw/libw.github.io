@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="zhihu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="never">
+    <title>知乎首页</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/angular-sanitize.min.js"></script>
+
+</head>
+<body>
+<section class="container" ng-controller="con">
+    <section class="left">
+        <div class="l-title">
+            <div class="logo">
+                <a href=""></a>
+            </div>
+        </div>
+        <div class="l-content">
+
+            <ul>
+                <li>
+                    <a href="#!/">
+                        首页
+                    </a>
+                </li>
+                <li ng-repeat="v in data" >
+                    <a href="#!/list/{{v.id}}">
+                        {{v.name}}
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </section>
+    <section class="right" ng-view>
+
+    </section>
+</section>
+</body>
+</html>
