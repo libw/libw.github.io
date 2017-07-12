@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>顺风天气</title>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<script src="js/tools.js"></script>
+	<script src="js/data.js"></script>
+</head>
+<body>
+	<!--address start-->
+		<div class="address">
+			<ul></ul>
+		</div>
+		<!--address end-->
+	<div class="swiper-container pppp">
+  <div class="swiper-wrapper pppp">
+    <div class="swiper-slide pppp">
+    	<section class="Total">
+		<!--message start-->
+		<div class="message">
+	   		<div class="message_left"></div>
+			<ul class="message_right"></ul>
+		</div>
+		<!--message end-->
+		<!-- Farture start-->
+		<div class="farture">
+			<ul class="farture_top">
+				<li>预报</li>
+				<li class="farture_tops"></li>
+			</ul>
+			<ul class="farture_bottom only"></ul>
+		
+			<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+    <!-- 星期 start -->
+    	<ul class="farture_bottom only_fature_botton">
+				 
+			</ul>
+			<!-- 星期 end -->
+    </div>
+    <div class="swiper-slide">
+    	<ul class="farture_bottom only_fature_botton only_fature_bottons ">
+				 
+			</ul>
+    </div>
+  </div>
+</div>	
+		</div>
+		<!-- Farture end-->
+	</section>
+    </div>
+    <style>
+.message_tow{
+	color: #fff;
+}
+.pppp{
+    width: 100%;
+    height: 100%;
+}
+    </style>
+    <!-- 第二页 开始 -->
+       <div class="swiper-slide">
+			<!--address start-->
+		<div class="address">
+			<ul id="tow_address"></ul>
+		</div>
+		<!--address end-->
+		<!--详细信息 start -->
+		<ul class="farture_top" id="Fature_top">
+				<li>详细信息</li>
+			</ul>
+			<div class="Knows_weather">
+				<div class="Knows_left"></div>
+				<ul class="Knows_right"></ul>
+			</div>
+			<!--详细信息 start  -->
+			<!-- 空气质量 start -->
+			<ul class="farture_top" id="Fature_tops">
+				<li>空气质量</li>
+				<li class="fartre_tops" id="asdf"></li>
+			</ul>
+			 <div class="Color_icon">
+			 <ul class="Color_dong">
+			 	<li>&#xe62f;</li>
+			 </ul>
+			 	<ul class="Color_tall">
+			 	<li class="Color_one" style="background: #5ACB7B;">优</li>
+			 	<li class="Color_one" style="background: #A5D363;">良</li>
+			 	<li class="Color_one" style="background: #FFCF63;">轻</li>
+			 	<li class="Color_one" style="background: #FFB263;">中</li>
+			 	<li class="Color_tow" style="background:#EF865A">重度</li>
+			 	<li class="Color_three" style="background:#EF6163">严重</li>
+			 	</ul>
+			 </div>
+			 <ul class="Someing"></ul>
+			<!-- 空气质量 end -->
+		<!-- 第二页 结束 -->
+       </div>
+       <!-- 第三页 开始 -->
+  <div class="swiper-slide">
+  		<div class="address">
+			<ul id="tow_addresss"></ul>
+		</div>
+			<ul class="farture_top">
+				<li style="color:#fff">生活指数</li>
+			</ul>
+			<section id="Life_Totall"></section>
+  </div>
+  <!-- 第三页 结束 -->
+        <!-- 第四页 开始 -->
+  <div class="swiper-slide">
+  		<div class="address">
+			<ul id="tow_addressss"></ul>
+		</div>
+			<ul class="farture_top">
+				<li style="color:#fff">生活指数</li>
+			</ul>
+			<section id="Life_Totalls"></section>
+  </div>
+  <!-- 第四页 结束 -->
+  </div>
+</div>
+</body>
+<script src="js/index.js"></script>
+<script src="js/swiper.min.js"></script>
+<script> 
+var mySwiper = new Swiper('.swiper-container', {
+	 direction : 'horizontal',
+})
+</script>
+</html>

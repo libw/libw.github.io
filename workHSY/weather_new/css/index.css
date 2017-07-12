@@ -1,0 +1,318 @@
+@import url("xiangying.css");
+@import url("font_09m2myipchumcxr/iconfont.css");
+/*address start*/
+@font-face {
+  font-family: 'iconfont';  /* project id 314024 */
+  src: url('//at.alicdn.com/t/font_kxbcpstj2zjdzpvi.eot');
+  src: url('//at.alicdn.com/t/font_kxbcpstj2zjdzpvi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_kxbcpstj2zjdzpvi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_kxbcpstj2zjdzpvi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_kxbcpstj2zjdzpvi.svg#iconfont') format('svg');
+}
+body,html{
+    width: 100%;
+    background-image: url(../images/bg/101.jpg);    
+    background-size: cover;
+    background-attachment:scroll;
+}
+.pppp{
+    width: 100%;
+    height: 100%;
+}
+.Total{
+    width: 100%;
+    height: 100%;
+    background-size:cover;
+}
+.address{
+    width: 100%;
+}
+.address>ul{
+    width: 48%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    padding: 0 1rem;
+    justify-content: space-around;
+}
+.address>ul>li{
+    line-height: 1.3rem;
+    height: 100%;
+    color: #fff;
+    font-weight: bold;
+    font-size: .4rem;
+    font-family: 'iconfont';
+}
+/*address end*/
+
+/*message start*/
+.message{
+    height:5.5rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 1.2rem;
+}
+.message_left{
+    font-size: 1rem;
+    line-height: 5.5rem;
+    color: #fff;
+}
+.message_left>span{
+    border-right: .02rem solid #8C96AD;
+    padding-right: .2rem;
+}
+.message_right{
+    padding-top: 2rem;
+}
+.message_right>li{
+    padding-top: .04rem;
+    color: #fff;
+}
+.weather_icon{
+    width:.5rem;
+    height: .5rem;
+    background-size: contain;
+}
+.weather_icon>img{
+    width:.5rem;
+    height: .5rem;
+    display: block;
+}
+/*message end*/
+/*Farture start*/
+    .farture{
+                    width:100%;
+                    height:4rem;
+                    padding: 0 .5rem;
+                }
+                .farture_top{
+                    width: 100%;
+                    height: .7rem;
+                    line-height: .7rem;
+                    display: flex;
+                    justify-content:space-between;
+                    color: #848684;
+                    border-bottom: .02rem solid #848684;
+                }
+                .farture_tops{
+                    display: flex;
+                    justify-content:space-between;
+                }
+                .farture_tops>div{
+                       padding-left:.1rem 
+                }
+                .farture_tops>div:last-child{
+                        color: #fff;
+                }
+                .farture_bottom{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+}
+.farture_bottom>li{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items: center;
+    padding: .2rem 0;
+    color: #fff;
+
+}
+.farture_bottom>li>div:nth-child(2)>img{
+    width: 1rem;
+    height: 1rem;
+}
+/*Farture end*/
+/*星期 start*/
+.images_icon{
+    display: flex;
+    font-size: .12rem;
+    padding:.05rem;
+    position: relative;
+}
+.icon_bottom{
+    position:absolute;
+     bottom:.1rem;
+     right:.1rem;
+}
+.only_color{
+    color: #848684;
+}
+.images_icon{
+    border-right: .02rem solid #848684;
+    padding-left: .1rem;
+}
+.only_fature_botton>li:last-child>div:nth-child(2){
+    border: none;
+}
+/*星期 end*/
+
+.swiper-slide,.swiper-slide-active{
+    padding-left: .1rem;
+    padding-right: .2rem;
+}
+.only{
+    border-bottom: .02rem dashed #000;
+}
+/*第二页开始 详细信息*/
+#Fature_top{
+            height: 1.5rem;
+            line-height: 2.2rem;
+            
+        }
+        #Fature_top>li{
+            font-size: .4rem;
+            color: #fff;
+        }
+        .Knows_weather{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            border-bottom: .01rem solid #848684;
+             
+        }
+        .Knows_left{
+            width: 45%;
+            height: 100%;
+            padding-top: .5rem;
+        }
+        .Knows_left>img{
+            width: 3rem;
+            height: 3rem;
+        }
+        .Knows_right{
+            width: 55%;
+            height: 100%;
+            margin-top: .2rem;
+            display: flex;
+            flex-direction:column;
+        /*  justify-content:space-between;
+            align-items: center;*/
+        }
+        .Knows_right>li{
+            width: 100%;
+            height: 20%;
+            display: flex;
+            line-height: 240%;
+            justify-content:space-between;
+            padding-right: .2rem;
+            border-bottom: .01rem dashed #7B8284;
+            color: #fff;
+        }
+        .Knows_right>li:last-child{
+            border: none;
+        }
+/*第二页结束 详细信息*/
+/*空气质量 开始*/
+#Fature_tops{
+        height: 2rem;
+    line-height:3.4rem;
+     
+}
+.Color_icon{
+    width: 100%;
+    height: 1.5rem;
+    border-bottom: .02rem dashed #586472;
+}
+.Color_tall{
+   width: 100%;
+   height: .5rem;
+   display: flex;
+   justify-content: space-around;
+}
+.Color_one{
+    width: 10%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+}
+.Color_tow{
+    width: 20%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+     
+}
+.Color_three{
+    width: 38%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+}
+.Color_dong{
+    width: 100%;
+    padding-top: .2rem;
+
+}
+.Color_dong>li{
+    margin-left: .5rem;
+    font-family: 'iconfont';
+    color: #fff;
+}
+
+/*下面*/
+.Someing{
+    width: 100%;
+    height: 2.4rem;
+    display: flex;
+    padding: .1rem 0;
+   justify-content: space-between;
+}
+.Someing>li{
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+   justify-content: space-between;
+}
+.Someing>li>div{
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+   justify-content: space-between;
+
+}
+.Someing>li>div>div{
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+
+}
+#color_Soming{
+    color: #7C8797;
+}
+/*空气质量 结束*/
+
+/*生活质量 开始*/
+.Life_good{
+    width: 100%;
+     display: flex;
+   justify-content: space-around;
+}
+.Life_good>li:first-child{
+    width: 30%;
+    height: 100%;
+    font-family: 'iconfont';
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 200%;
+}
+.Life_good>li:last-child{
+    width: 70%;
+    height: 100%;
+    padding: .2rem 0;
+    border-bottom: .01rem dashed #ccc;
+}
+.Life_good>li:last-child>div{
+    display: flex;
+   justify-content: space-between;
+   padding-top: .1rem;
+
+}
+/*生活质量 结束*/

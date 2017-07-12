@@ -1,0 +1,20 @@
+<link rel="stylesheet" ng-href="{{show.css}}">
+<section class="show_box">
+    <div class="show_content">
+        <div class="show_img">
+            <img src="{{show.image||'https://pic3.zhimg.com/v2-f0c67cef114306e88bf644f0dd80e9a2.jpg'
+}}" alt="">
+            <h1>- {{show.image_source}} </h1>
+        </div>
+        <div class="show_text">
+           <h2>{{show.title}}</h2>
+        <div class="show_peoele">
+             <div>
+                 <img src="images/45544a570_is.jpg" alt="">
+             </div>
+            <span> 霄汉，<i>无良乐评人</i></span><br>
+        </div>
+            <div ng-bind-html="show.body"></div>
+        </div>
+    </div>
+</section>

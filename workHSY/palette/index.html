@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 画板</title>
+    <script src="indexl.js"></script>
+    <style>
+        *{
+            font-size: 12px;
+            color: #000;
+            font-weight: 400;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+            list-style:none;
+        }
+        .box{
+            width:100%;
+            height: auto;
+        }
+        .con{
+            width:100%;
+            height:30px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            line-height: 30px;
+        }
+        .con li{
+            width:9%;
+            height: 100%;
+            border-radius: 10px;
+            background-color: rgba(245, 60, 50, 0.53);
+        }
+        canvas{
+            display: block;
+            background-color: #ccc;
+            margin:10px auto;
+        }
+        #del{
+            cursor: pointer;
+        }
+        #back{
+            cursor: pointer;
+        }
+        #save{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+ <section class="box">
+     <ul class="con">
+         <li>
+             <span>样式</span>
+             <select name="" id="style">
+                 <option value="stroke">描边</option>
+                 <option value="fill">填充</option>
+             </select>
+         </li>
+         <li>
+             <span>形状</span>
+             <select name="" id="typle">
+                 <option value="line">直线</option>
+                 <option value="crec">长方形</option>
+                 <option value="arc">圆形</option>
+                 <option value="srec">多边形</option>
+                 <option value="qianbi">铅笔</option>
+                 <option value="reser">橡皮擦</option>
+             </select>
+         </li>
+         <li>
+             <span>边数</span>
+             <input type="number" min="3" max="12" value="3" id="ws">
+         </li>
+         <li>
+             <span>选择功能</span>
+             <select name="">
+                 <option value="">默认</option>
+             </select>
+         </li>
+         <li>
+             <span>画笔颜色</span>
+             <input type="color" id="pencolor">
+         </li>
+         <li>
+             <span>画布颜色</span>
+             <input type="color" id="bgcolor">
+         </li>
+         <li>
+             <span>线宽</span>
+             <select name="" id="width">
+                 <option value="1">1</option>
+                 <option value="2">2</option>
+                 <option value="3">3</option>
+                 <option value="4">4</option>
+                 <option value="5">5</option>
+             </select>
+         </li>
+         <li>
+             <span>笔型</span>
+             <select name="">
+                 <option value="">铅笔</option>
+                 <option value="">钢笔</option>
+                 <option value="">毛笔</option>
+             </select>
+         </li>
+         <li id="del">
+             <span>清空</span>
+         </li>
+         <li id="back">
+             <span>返回</span>
+         </li>
+         <li id="save">
+             <span>保存</span>
+         </li>
+     </ul>
+ </section>
+<canvas width="500" height="500"></canvas>
+</body>
+<script>
+    var canvas=document.querySelector("canvas");
+    var obju=canvas.getContext("2d");
+    var typle=document.querySelector("#typle");
+    var style=document.querySelector("#style");
+    var bgcolor=document.querySelector("#bgcolor");
+    var pencolor=document.querySelector("#pencolor");
+    var width=document.querySelector("#width");
+    var ws=document.querySelector("#ws");
+    var del=document.querySelector("#del");
+    var back=document.querySelector("#back");
+    var save=document.querySelector("#save");
+    var his=[];
+    var typ="line";
+    typle.onchange=function(){
+         typ=typle.value;
+    };
+    var st="stroke";
+    style.onchange=function(){
+        st=style.value;
+    }
+    var bgcol="#000";
+    bgcolor.onchange=function () {
+        bgcol=bgcolor.value;
+        canvas.style.backgroundColor=bgcol;
+    }
+    var pen="#000";
+    pencolor.onchange=function(){
+        pen=pencolor.value;
+    }
+    var wid=1;
+    width.onchange=function(){
+        wid=width.value;
+    };
+     var w=3;
+    ws.onchange=function(){
+        w=ws.value;
+    };
+    del.onclick=function(){
+        window.location.reload();
+    };
+    canvas.onmousedown=function(e){
+        var dx=e.offsetX;
+        var dy=e.offsetY;
+        var drawn=new Drawn(obju,{st,pen,wid});
+        if (typ=="qianbi"){
+            obju.beginPath();
+            obju.moveTo(dx,dy);
+        }
+        canvas.onmousemove=function(e){
+            var mx=e.offsetX;
+            var my=e.offsetY;
+            if (typ!=="reser"){
+                obju.clearRect(0,0,500,500);
+                if (his.length>0){
+                    obju.putImageData(his[his.length-1],0,0)
+                }
+            }
+
+            drawn[typ](dx,dy,mx,my,w);
+            canvas.onmouseup=function(){
+                canvas.onmousemove=null;
+                canvas.onmouseup=null;
+                var aa=obju.getImageData(0,0,500,500);
+                his.push(aa);
+            }
+        }
+    }
+    back.onclick=function () {
+        his.pop();
+        obju.clearRect(0,0,500,500);
+        if(his.length==0){
+            alert("已经不能在撤销了");
+            return;
+        }
+
+        obju.putImageData(his[his.length-1],0,0);
+    };
+    save.onclick=function () {
+        url=canvas.toDataURL("image/png");
+        location.href=url;
+    };
+
+</script>
+</html>

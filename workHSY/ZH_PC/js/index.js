@@ -1,0 +1,31 @@
+var app=angular.module('app',['ngRoute','service','dir','ngSanitize']);
+app.config(function($routeProvider){
+    $routeProvider.when('/list/:id',{
+        templateUrl:'tpl/list.html',
+         controller:function($scope,$name,$routeParams){
+             $name.getId($routeParams.id).then(function(listdata){
+                 $scope.listdata=listdata;
+             })
+         }
+    }).when('/',{
+        templateUrl:'tpl/list_one.html',
+        controller:function($scope,$name){
+            $name.getnew().then(function(newdata){
+                $scope.newdata=newdata.stories;
+            })
+        }
+    }).when('/show/:id',{
+        templateUrl:'tpl/show.html',
+        controller:function($scope,$name,$routeParams){
+            $name.getshow($routeParams.id).then(function(show){
+                $scope.show=show;
+            })
+            
+        }
+    })
+});
+app.run(function($rootScope,$name){
+    $name.getall.then(function(data){
+        $rootScope.data=data.others
+    })
+})

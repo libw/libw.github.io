@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻阅读</title>
+    <meta name="referrer" content="never">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/Angular.js"></script>
+    <script src="js/santiize.js"></script>
+    <script src="js/route.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/directive.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+       <!--content_left start-->
+       <div class="box_left">
+           <a href=""><div class="left_top"></div></a>
+              <div class="left_bottom">
+                  <ul class="bottom_nav">
+                      <li><a href="#!/">首页</a></li>
+                      <li ng-repeat="v in data"><a href="#!/list/{{v.id}}" title="{{v.description}}">{{v.name}}</a></li>
+                  </ul>
+              </div>
+       </div>
+       <!--content_left end-->
+       <!--content_right start-->
+       <div class="box_right">
+           <div class="right_content">
+                   <span>浏览内容</span>
+                   <span>最新内容</span>
+           </div>
+           <!--01 start-->
+           <section class="all" ng-view>
+                <!--<showright ng-repeat="v in arr" data="v"></showright>-->
+           </section>
+           <!--01 end-->
+           <!--返回顶部-->
+            <!-- <div class="go_top"></div> -->
+       </div>
+       <!--content_right end-->
+</body>
+</html>

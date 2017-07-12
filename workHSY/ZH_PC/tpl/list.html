@@ -1,0 +1,10 @@
+<div class="toppic">
+        <img src="{{listdata.background}}" alt="">
+	</div>
+	<div class="zhubian">
+      <span>主编</span>
+      <div class="zbtoux" ng-repeat="v in listdata.editors">
+         <img src="{{v.avatar}}" alt="">
+      </div>
+	</div>
+<showright ng-repeat="v in listdata.stories" data="{imgaes:v.images,title:v.title,id:v.id}"></showright>
